@@ -1,13 +1,14 @@
-let num = 3212;
+/*Clock shows h hours, m minutes and s seconds after midnight.
 
-function squareDigits(num) {
-  let array = ("" + num).split("").map(Number);
-  console.log(array);
-  let a = array.map((el) => el ** 2);
-  console.log(a);
-  let b = a.join("");
-  let c = Number(b);
-  console.log(c);
-  return c;
+Your task is to write a function which returns the time since midnight in milliseconds.
+
+Example:
+h = 0
+m = 1
+s = 1
+
+result = 61000*/
+
+function past(h, m, s) {
+  return (h * 3600 + m * 60 + s) * 1000;
 }
-squareDigits(3212);
