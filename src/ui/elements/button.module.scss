@@ -1,0 +1,65 @@
+.btn {
+  margin: 25px;
+  display: inline-block;
+  padding: 15px 35px;
+  color: black;
+  position: relative;
+}
+.btn:before,
+.btn:after,
+.btn > span:before,
+.btn > span:after {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border: 3px solid #ea8300;
+  transition: 0.3s;
+}
+
+.btn:before {
+  top: 0;
+  left: 0;
+  border-bottom: none;
+  border-right: none;
+  border-radius: 5px 0 0 0;
+}
+.btn:after {
+  top: 0;
+  right: 0;
+  border-bottom: none;
+  border-left: none;
+  border-radius: 0 5px 0 0;
+}
+.btn > span {
+  display: block;
+}
+.btn > span:before {
+  bottom: 0;
+  left: 0;
+  border-top: none;
+  border-right: none;
+  border-radius: 0 0 0 5px;
+}
+.btn > span:after {
+  bottom: 0;
+  right: 0;
+  border-top: none;
+  border-left: none;
+  border-radius: 0 0 5px 0;
+}
+.btn:hover:after {
+  height: calc(100% - 15%);
+}
+.btn:hover:after {
+  height: calc(100% - 15%);
+}
+.btn:hover > span:after {
+  width: calc(100% - 15%);
+}
+.btn:hover:before {
+  width: calc(100% - 15%);
+}
+.btn:hover > span:before {
+  height: calc(100% - 15%);
+}

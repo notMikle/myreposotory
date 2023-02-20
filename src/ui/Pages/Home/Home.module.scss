@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap");
+
+.homeImage {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0% -1%, 100% -1%, 100% 75%, 0 68%);
+  filter: brightness(30%);
+}
+.h1Up {
+  position: absolute;
+  top: 30%;
+  font-size: 120px;
+  left: 7%;
+  color: #fff;
+}
+.h1Down {
+  position: absolute;
+  top: 425px;
+  text-transform: lowercase;
+
+  font-size: 120px;
+  left: 50%;
+  color: #fff;
+}
+.h2Up {
+  font-family: "Caveat", cursive;
+  position: absolute;
+  top: 402px;
+  color: #ea8300;
+  font-size: 80px;
+  left: 88px;
+}
+.h2Down {
+  font-family: "Caveat", cursive;
+  position: absolute;
+  top: 462px;
+  color: #ea8300;
+  font-size: 80px;
+  left: 88px;
+}
+.circle {
+  height: 400px;
+  background-color: white;
+}
