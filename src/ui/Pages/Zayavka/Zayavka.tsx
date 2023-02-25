@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import style from "./zayavka.module.scss";
+import TextField from "@mui/material/TextField";
+import VerticalLinearStepper from "./steper";
 
 const Zayavka = (props: any) => {
   let technik = [...props.state].map((m: any) => (
@@ -10,7 +12,8 @@ const Zayavka = (props: any) => {
   let [numberOfPhone, setNumberOfPhone] = useState("");
   return (
     <>
-      <div className={style.oneStep}>
+      <VerticalLinearStepper state={props.state} />
+      {/* <div className={style.oneStep}>
         <h2>Шаг 1</h2>
         <h3>(выберите технику)</h3>
         <select className={style.select}>
@@ -41,7 +44,7 @@ const Zayavka = (props: any) => {
           onChange={(e) => setNumberOfPhone(e.target.value)}
         />
         после ввода сделать отправку формы в почту
-      </div>
+      </div> */}
     </>
   );
 };
