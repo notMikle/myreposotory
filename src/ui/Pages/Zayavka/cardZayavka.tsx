@@ -1,18 +1,25 @@
 import React, { useState } from "react";
 import style from "./cardZayavka.module.scss";
 import avatar from "../../../images/avatar.png";
-import { useNavigate } from "react-router-dom";
-import MiddleDividers from "./divider";
-import { Chip } from "@mui/material";
+
 import ControlledSwitches from "./switch";
 
 const Card = (props: any) => {
-  let [state, setState] = useState(0);
+  let [state, setState] = useState(true);
+  let a = () => {
+    setState((state = !state));
+  };
+  let gusek = props.gusek;
+
   return (
-    <div className={style.card}>
+    <div className={state === true ? style.card : style.card2} onClick={a}>
       <img className={style.img} src={avatar} alt="Avatar" />
       <h4>
-        <b>{props.name}</b>
+        <b>
+          {props.name}
+          <br></br>
+          {props.subname}
+        </b>
       </h4>
       <div className={style.container}>
         <div>
@@ -24,9 +31,15 @@ const Card = (props: any) => {
 
           {/* <button className={style.button}></button> */}
         </div>
-        <ControlledSwitches />
-
-        {/* <MiddleDividers /> */}
+        <div className={style.dop}>
+          {gusek ? (
+            <>
+              Гусек: <ControlledSwitches />
+            </>
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
     </div>
   );
