@@ -1,25 +1,18 @@
 import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
 import s from "./tech.module.scss";
 import Card from "./cardZayavka";
 
 function TabPanel(props: any) {
-  const { children, value, index, ...other } = props;
+  const { children, value, index } = props;
 
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
+    <div>
       {value === index && (
-        <Box sx={{ p: 2 }}>
+        <Box>
           <div className={s.tabPanel}>{children}</div>
         </Box>
       )}
@@ -27,64 +20,77 @@ function TabPanel(props: any) {
   );
 }
 
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
-
 export default function BasicTabs(props: any) {
-  debugger;
-  let cardElement = props.props.state.map((m: any) => (
-    <Card name={m.name} key={m.id} id={m.id} price={m.price} />
+  let [state, setState] = React.useState([...props.props.state]);
+
+  let [value, setValue] = React.useState(0);
+
+  function filter(value: number) {
+    if (value === 0) {
+      setState([...props.props.state]);
+    } else {
+      let newState = [...props.props.state].filter(
+        (i) => i.categoryId === value
+      );
+      setState(newState);
+    }
+  }
+
+  let cardElement = state.map((m: any) => (
+    <Card
+      name={m.name}
+      subname={m.subname}
+      key={m.id}
+      id={m.id}
+      price={m.price}
+      gusek={m.gusek}
+    />
   ));
-  const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    console.log(newValue);
+    filter(newValue);
     setValue(newValue);
   };
 
   return (
     <div>
       <Box>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="basic tabs example"
-        >
-          <Tab className={s.tabPanel} label="Автокран" {...a11yProps(0)} />
-          <Tab label="Гeсеничный кран" {...a11yProps(1)} />
-          <Tab label="Экскаватор" {...a11yProps(2)} />
-          <Tab label="Трубоукладчик" {...a11yProps(3)} />
-          <Tab label="Автогидроподъемник" {...a11yProps(4)} />
-          <Tab label="Item Three" {...a11yProps(5)} />
-          <Tab label="Item Three" {...a11yProps(6)} />
-          <Tab label="Item Three" {...a11yProps(7)} />
+        <Tabs value={value} onChange={handleChange}>
+          <Tab className={s.tabPanels} label="Все" />
+          <Tab className={s.tabPanels} label="Автовышка" />
+          <Tab className={s.tabPanels} label="Автокран" />
+          <Tab className={s.tabPanels} label="Кран гусеничный" />
+          <Tab className={s.tabPanels} label="Трубоукладчик" />
+          <Tab className={s.tabPanels} label="Экскаватор" />
+          <Tab className={s.tabPanels} label="Погрузчик" />
+          <Tab className={s.tabPanels} label="Бульдозер" />
         </Tabs>
       </Box>
       <div className={s.tabPanel}>
         <TabPanel display={"flex"} value={value} index={0}>
           {cardElement}
         </TabPanel>
-        <TabPanel value={value} index={1}></TabPanel>
+        <TabPanel value={value} index={1}>
+          {cardElement}
+        </TabPanel>
         <TabPanel value={value} index={2}>
-          Item Three
+          {cardElement}
         </TabPanel>
         <TabPanel value={value} index={3}>
-          Item Three
+          {cardElement}
         </TabPanel>
         <TabPanel value={value} index={4}>
-          Item Three
+          {cardElement}
         </TabPanel>
         <TabPanel value={value} index={5}>
-          Item Three
+          {cardElement}
         </TabPanel>
         <TabPanel value={value} index={6}>
-          Item Three
+          {cardElement}
         </TabPanel>
         <TabPanel value={value} index={7}>
-          Item Three
+          {cardElement}
         </TabPanel>
       </div>
     </div>
