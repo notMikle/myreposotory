@@ -13,17 +13,12 @@ import FormPropsTextFields from "./time";
 import InputWithIcon from "./fio";
 
 import BasicTabs from "./tech";
-import Card from "../Technic/Card";
-
+import s from "./tech.module.scss";
 export default function VerticalLinearStepper(props: any) {
   const steps = [
     {
       label: "Выберите технику",
-      description: (
-        <>
-          <BasicTabs props={props} />
-        </>
-      ),
+      description: <BasicTabs props={props} />,
     },
     {
       label: "Выберите время аренды",
@@ -54,7 +49,7 @@ export default function VerticalLinearStepper(props: any) {
   };
 
   return (
-    <Box sx={{ margin: "30px 80px" }}>
+    <Box className={s.box}>
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((step, index) => (
           <Step key={step.label}>
@@ -67,7 +62,7 @@ export default function VerticalLinearStepper(props: any) {
             </StepLabel>
             <StepContent>
               <Typography>{step.description}</Typography>
-              <Box sx={{ mb: 2 }}>
+              <Box>
                 <div>
                   <Button
                     variant="contained"
