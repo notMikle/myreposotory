@@ -82,7 +82,16 @@ export default function CustomizedSlider() {
   return (
     <Box sx={{ width: 320 }}>
       <Typography gutterBottom>
-        Добавить часы к смене ? <br></br> + {value} часов
+        Добавить часы к смене ? <br></br> + {value}{" "}
+        {value === 1
+          ? "час"
+          : value === 2
+          ? "часа"
+          : value === 3
+          ? "часа"
+          : value === 4
+          ? "часа"
+          : "часов"}
       </Typography>
       <PrettoSlider
         // valueLabelDisplay="on"
