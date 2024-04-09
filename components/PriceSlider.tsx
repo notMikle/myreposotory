@@ -37,7 +37,6 @@ const Slider = forwardRef<
                 </SliderPrimitive.Root>
 
             </div>
-
         </>
     )
 })
