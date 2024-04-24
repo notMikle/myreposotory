@@ -329,3 +329,57 @@ export const social = [
         color: 'red'
     }
 ]
+
+export const works = [
+    {
+        id: '1',
+        tag:'main',
+        image:'/sochi.jpg',
+        title: 'Олимпийские объекты',
+        location: 'г.Сочи',
+        period: '2013-2014г',
+        tech: ['МКГ-25БР', 'МКАТ-40']
+    },
+    {
+        id: '2',
+        tag:'main',
+        image:'/keramix.jpeg',
+        title: 'ТЦ «Керамикс»',
+        location: 'г.Старый Оскол',
+        period: '2013г',
+        tech: ['МКГ-25БР', 'МКАТ-40']
+    },
+    {
+        id: '3',
+        tag:'main',
+        image:'/belPtitsa.webp',
+        title: 'Курский Агрохолдинг — ООО «Белая птица — Курск»  ПТФ',
+        location: 'п.Горшечное',
+        period: '2012г-2016г',
+        tech: ['МКГ-25БР', 'МКАТ-40']
+    },
+    {
+        id:'4',
+        image:'/cement.webp',
+        title: 'Цех обжига, цех помола ЗАО «Осколцемент»',
+        location: 'г.Старый Оскол',
+        period: '2012-2014г',
+        tech: ['МКГ-25БР', 'МКАТ-40']
+    },
+    {
+        id:'5',
+        image:'/liski.webp',
+        title: 'Лискинский завод монтажных заготовок',
+        location: 'г.Лиски',
+        period: '2013г',
+        tech: ['МКГ-25БР', 'МКАТ-40']
+    },
+    {
+        id:'6',
+        image:'/kursktec.jpeg',
+        title: 'Курская ТЭЦ-1 филиала ОАО «Квадра» — «Южная генерация',
+        location: 'г.Курск',
+        period: '2013-2014г',
+        tech: ['МКГ-25БР', 'МКАТ-40']
+    },
+]

@@ -6,10 +6,10 @@
     ],
     "brand": "Амкодор 342В",
     "title": "Амкодор 342В",
-    "info": "",
+    "info": ["Грузоподъемность, кг 4000", "Вместимость основного ковша, м3 2.3"],
     "category": "Погрузчик",
-    "finalPrice": "2999",
-    "originalPrice": 69,
+    "finalPrice": 29999,
+    "originalPrice": 299,
     "quantity": "1",
     "gosNum": "1577EK"
   },

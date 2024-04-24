@@ -10,7 +10,7 @@ export const Contacts = () => {
     return (
         <StyledContacts id='contacts'>
             <Container>
-                <SectionTitle>Contacts</SectionTitle>
+                <SectionTitle>Контакты</SectionTitle>
                 <FlexWrapper wrap={'wrap'} justify={'space-around'}>
                     <MyMapWithRoute/>
                     <RhfWithAction/>

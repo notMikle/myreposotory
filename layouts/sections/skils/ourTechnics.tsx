@@ -29,7 +29,6 @@ import {
 
 export const OurTechnics = () => {
 
-
     return (
         <StyledSkills id="skills">
             <Container>
@@ -81,7 +80,7 @@ export const OurTechnics = () => {
         </StyledSkills>
     );
 };
-const Tech = styled.div`
+export const Tech = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

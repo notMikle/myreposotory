@@ -6,6 +6,8 @@ import {FlexWrapper} from '@/components/FlexWrapper';
 import Image from 'next/image';
 import {NavBar} from '@/layouts/sections/navBar/NavBar';
 import {useTechData} from '@/data/techDataContext';
+import {EditableSpan} from '@/components/editableSpan/editableSpan';
+import React from 'react';
 
 const Park = () => {
     const {techData, loading} = useTechData();
@@ -22,10 +24,13 @@ const Park = () => {
                             <CardDiv className="card">
                                 <Link href={`/techniks/${el.id}`} key={el.id}>
                                     <FlexWrapper justify={'space-between'} wrap={'wrap'} padding={'10px 30px'}>
-                                        <StyledImage src={el.images[0]} alt={el.title} width={300} height={200}/>
+                                        <ImageDiv>
+                                            <StyledImage src={el.images[0]} alt={el.title} width={300} height={200}/>
+                                        </ImageDiv>
                                         <Description>
                                             <h2>{el.title}</h2>
-                                            <p>{el.originalPrice}</p>
+                                            <span>{el.info}</span>
+                                            <h3><span>{el.finalPrice}</span><span> ₽/смена</span></h3>
                                         </Description>
                                     </FlexWrapper>
                                 </Link>
@@ -64,4 +69,11 @@ export const CardDiv = styled.div`
 `
 export const StyledImage = styled(Image)`
   border-radius: 30px;
+`
+
+export const ImageDiv = styled.div`
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `

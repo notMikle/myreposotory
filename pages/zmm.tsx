@@ -30,7 +30,7 @@ const Zmm = () => {
     };
     const handlePriceClick = async (id: string, newValue: string) => {
         try {
-            const updatedData = await updateTechData(id, { originalPrice: Number(newValue) });
+            const updatedData = await updateTechData(id, { finalPrice: Number(newValue) });
             console.log('Tech data updated:', updatedData);
             setUpdatedData(updatedData);
         } catch (error) {
@@ -56,8 +56,8 @@ const Zmm = () => {
                                 <StyledImage src={el.images[0]} alt={el.title} width={300} height={200}/>
                                 <Description>
                                     <EditableSpan onChange={(newValue) => handleTitleClick(el.id, newValue)} value={el.title}>
-
-                                    </EditableSpan><EditableSpan onChange={(newValue) => handlePriceClick(el.id, newValue)} value={el.originalPrice}></EditableSpan>
+                                    </EditableSpan>
+                                   <span> <EditableSpan onChange={(newValue) => handlePriceClick(el.id, newValue)} value={el.finalPrice}></EditableSpan><span> ₽/смена</span></span>
                                 </Description>
                             </FlexWrapper>
                             {/*</Link>*/}
@@ -80,9 +80,9 @@ export const GridWrapper = styled.div`
 export const Description = styled.div`
   width: 200px;
   text-align: right;
-  //display: flex;
-  //flex-direction: column;
-  //justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 export const CardDiv = styled.div`
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);

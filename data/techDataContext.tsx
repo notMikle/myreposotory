@@ -7,7 +7,7 @@ type TechType = {
     images: string[];
     brand: string;
     title: string;
-    info: string;
+    info: string[];
     category: string;
     finalPrice: string;
     originalPrice: string;

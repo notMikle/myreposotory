@@ -5,9 +5,9 @@ import { FormDataSchema } from '@/lib/schema'
 import axios from 'axios';
 
 type Inputs = z.infer<typeof FormDataSchema>
-export default async function sendMessage(name: string, company: string, phone:string) {
+export default async function sendMessage(name: string, company: string, phone:string, dataTech:any) {
     try {
-        const response = await axios.post('/api/sendMessage', { name, company, phone});
+        const response = await axios.post('/api/sendMessage', { name, company, phone, dataTech});
         return response.data;
     } catch (error) {
         console.error('Error sending message:', error);
@@ -15,11 +15,12 @@ export default async function sendMessage(name: string, company: string, phone:s
     }
 }
 
-export async function addEntry(data: Inputs) {
+export async function addEntry(data: Inputs, dataTech:any) {
     const result = FormDataSchema.safeParse(data)
-
+    console.log(result)
     if (result.success) {
-        sendMessage(data.name, data.company, data.phone)
+        sendMessage(data.name, data.company, data.phone, JSON.stringify(dataTech))
+        console.log(dataTech)
         return { success: true, data: result.data }
     }
 

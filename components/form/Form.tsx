@@ -20,9 +20,8 @@ const FormDataSchema = z.object({
 
 type Inputs = z.infer<typeof FormDataSchema>
 
-export default function RhfWithAction() {
+export default function RhfWithAction(dataTech:any) {
     const [data, setData] = useState<Inputs>()
-
     const {
         register,
         handleSubmit,
@@ -34,7 +33,7 @@ export default function RhfWithAction() {
     })
 
     const processForm: SubmitHandler<Inputs> = async data => {
-        const result = await addEntry(data)
+        const result = await addEntry(data, dataTech)
 
         if (!result) {
             console.log('Something went wrong')

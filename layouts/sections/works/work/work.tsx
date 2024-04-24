@@ -3,23 +3,32 @@ import styled from 'styled-components';
 import {Icon} from '@/components/icon/icon';
 import {SiGithub} from 'react-icons/si';
 import {FaLink} from 'react-icons/fa6';
-import proj from '@/assets/image/project2.png'
 import {Button} from '@/components/Button';
 import {theme} from '@/styles/theme';
+import router from 'next/router';
+import { BsBuildings } from "react-icons/bs";
 
 
 type WorkPropsType = {
+    id:string
     title: string
     description: string
     src: string
     stack:string
+    photo:string
 }
 export const Work = (props: WorkPropsType) => {
+    const workHandler =()=>{
+        router.push(`/OurWorks/${props.id}`);
+    }
     return (
         <StyledWork>
             <ImageWrapper>
-                <Button>view</Button>
-                <Image src={proj.src} alt="ghb"/>
+               <ButtonWork onClick={workHandler}>
+                   <BsBuildings size={30}></BsBuildings>
+                   <span>Смотреть</span>
+               </ButtonWork>
+                <Image src={props.photo} alt="ghb"/>
             </ImageWrapper>
             <Description>
                 <Title>{props.title}</Title>
@@ -32,6 +41,12 @@ export const Work = (props: WorkPropsType) => {
     );
 };
 
+
+const ButtonWork = styled(Button)`
+  font-weight: bold;
+  color: rgb(255, 170, 0);
+  
+`
 const Link = styled.a`
   position: relative;
   display: inline-block;
@@ -74,6 +89,13 @@ const StyledWork = styled.div`
 `
 const ImageWrapper = styled.div`
   position: relative;
+  width: 350px;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   ${Button}{
     opacity: 0;
     position: absolute;
@@ -88,8 +110,8 @@ const ImageWrapper = styled.div`
     right: 0;
     top: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0, 0.3);
-    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
     opacity: 0;
   }
   &:hover {
@@ -110,7 +132,9 @@ const ImageWrapper = styled.div`
   }
 `
 const Image = styled.img`
+  
   width: 100%;
+  height: 100%;
   object-fit: cover;
 `
 const Text = styled.p`
