@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '@/public/group.png'
+import img from '../../../public/Group.png'
 import {FlexWrapper} from '@/components/FlexWrapper';
 import {Container} from '@/components/Container';
 import Typewriter from 'typewriter-effect';
