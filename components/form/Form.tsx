@@ -4,7 +4,7 @@ import {useState} from 'react'
 import {useForm, SubmitHandler} from 'react-hook-form'
 import {zodResolver} from '@hookform/resolvers/zod'
 import {z} from 'zod'
-import {addEntry} from '@/pages/_actions'
+import {addEntry} from '@/components/_actions'
 import {TextField} from '@/components/textField/TextField';
 import styled from 'styled-components';
 
