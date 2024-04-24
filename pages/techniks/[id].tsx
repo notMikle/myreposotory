@@ -106,6 +106,7 @@ export const TitleTech = styled.h3`
 `
 export const StyledDivButtonBack = styled.div`
   width: 200px;
+  //width: 200px;
   margin-top: 70px;
   padding: 40px 0;
 `
