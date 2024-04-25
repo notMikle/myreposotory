@@ -2,9 +2,7 @@ import React, {MouseEventHandler, useEffect, useState} from 'react';
 import {useTechData} from '@/data/techDataContext';
 import {useRouter} from 'next/router';
 import Layout from '@/layouts/layout';
-import {NavBar} from '@/layouts/sections/navBar/NavBar';
 import {FlexWrapper} from '@/components/FlexWrapper';
-import Link from 'next/link';
 import styled from 'styled-components';
 import Image from 'next/image';
 import {updateTechData} from '@/data/updateData';
@@ -42,7 +40,7 @@ const Zmm = () => {
             refreshTechData(); // Вызываем функцию обновления данных
             setUpdatedData(null);
         }
-    }, [updatedData]);
+    }, [refreshTechData, updatedData]);
 
     return (
         <Layout>

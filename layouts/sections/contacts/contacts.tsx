@@ -13,7 +13,7 @@ export const Contacts = () => {
                 <SectionTitle>Контакты</SectionTitle>
                 <FlexWrapper wrap={'wrap'} justify={'space-around'}>
                     <MyMapWithRoute/>
-                    <RhfWithAction/>
+                    <RhfWithAction dataTech={''}/>
                 </FlexWrapper>
             </Container>
         </StyledContacts>

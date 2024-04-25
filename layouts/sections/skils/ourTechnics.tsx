@@ -33,8 +33,8 @@ export const OurTechnics = () => {
         <StyledSkills id="skills">
             <Container>
                 <SectionTitle>Наш парк техники</SectionTitle>
-                <SectionSubTitle>Technologies I’ve been working with recently</SectionSubTitle>
-                <FlexWrapper wrap={'wrap'} gap={'20px'}>
+                <SectionSubTitle>Техника для любых задач</SectionSubTitle>
+                <FlexWrapper wrap={'wrap'} gap={'20px'} justify={'center'}>
                     <Tech onClick={handleBulldozerClick}>
                         <TechSVG><Buldozer/></TechSVG>
                         <h3>Бульдозеры</h3>

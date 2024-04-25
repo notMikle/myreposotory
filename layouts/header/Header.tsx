@@ -10,7 +10,8 @@ import styled from 'styled-components';
 import {useRouter} from 'next/router';
 
 export const Header: React.FC = () => {
-    const [width, setWidth] = useState(1000)
+    let a = global.innerWidth
+    const [width, setWidth] = useState(a)
     const breakpoint = 768
 
     useEffect(() => {
