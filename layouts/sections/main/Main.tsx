@@ -22,8 +22,6 @@ export const Main: React.FC = () => {
                     <TextBlock>
                         <SmallText>Привет!</SmallText>
                         <Name>Мы занимаемся арендой техники с 1997 года</Name>
-                        <Name>Мы занимаемся арендой техники с 1997 года</Name>
-                        <Name></Name>
                         <StyleH1>
                             <p>A Web Developer</p>
                             <Typewriter
