@@ -1,12 +1,9 @@
 import React from 'react';
-import img from '../../../public/Group.png'
 import {FlexWrapper} from '@/components/FlexWrapper';
 import {Container} from '@/components/Container';
 import Typewriter from 'typewriter-effect';
 import {
     Name,
-    Photo,
-    PhotoWrapper,
     SmallText,
     StyledMain,
     StyleH1,
@@ -36,9 +33,6 @@ export const Main: React.FC = () => {
                             />
                         </StyleH1>
                     </TextBlock>
-                    <PhotoWrapper>
-                        <Photo src={img.src} alt=""/>
-                    </PhotoWrapper>
                 </FlexWrapper>
             </Container>
         </StyledMain>
