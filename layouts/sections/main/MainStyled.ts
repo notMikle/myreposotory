@@ -19,6 +19,9 @@ export const StyledMain = styled.section`
  
   display: flex;
   min-height: 100vh;
+  @media ${theme.media.tablet}{
+    min-height: 100%;
+  }
 `
 export const StyleH1 = styled.h1`
   ${font({Fmax:40, Fmin:20, weight:700})}
@@ -35,6 +38,7 @@ export const Name = styled.h2`
   letter-spacing: 0.05em;
   margin: 15px 0;
   z-index: 555555;
+  max-width: 700px;
 
   span{
     white-space: nowrap;

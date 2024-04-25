@@ -11,17 +11,18 @@ import {
 } from '@/layouts/sections/main/MainStyled';
 import Image from 'next/image';
 import styled from 'styled-components';
+import mainImg from '@/public/mainImg.png'
+import {theme} from '@/styles/theme';
 
 export const Main: React.FC = () => {
     return (
         <StyledMain id='main'>
             <Container>
-                <StImage src="/group11.svg" alt="" width={750} height={750}/>
-                <FlexWrapper align={'center'} justify={'space-around'} wrap={'wrap'}>
+                <FlexWrapper align={'center'} wrap={'wrap'}>
                     <TextBlock>
                         <SmallText>Привет!</SmallText>
-                        <Name>Мы занимаемся арендой</Name>
-                        <Name> техники с 1997 года</Name>
+                        <Name>Мы занимаемся арендой техники с 1997 года</Name>
+                        <Name></Name>
                         <StyleH1>
                             <p>A Web Developer</p>
                             <Typewriter
@@ -33,17 +34,21 @@ export const Main: React.FC = () => {
                             />
                         </StyleH1>
                     </TextBlock>
+                    <StImage src='/Group11.svg' alt="" width={869} height={459}/>
                 </FlexWrapper>
             </Container>
         </StyledMain>
     );
 };
 export const StImage = styled(Image)`
+  max-width: 100%;
   opacity: 0.9;
   position: absolute;
   left: 80%;
-  top: 0;
-  transition: 3s;
+  top: 100px;
+  transition: 5s;
   transform: translateX(-300px);
-  
+  @media ${theme.media.tablet}{
+    display: none;
+  }
 `
